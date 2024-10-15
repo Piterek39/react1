@@ -25,7 +25,7 @@ fs.readFile('./src/cars.txt', 'utf8', (err, data) => {
     content += "];";
 
     // Zapisz dane do pliku module-data.js
-    fs.writeFile('./src/module-data.js', content, (err) => {
+    fs.writeFile('./data/module-data.js', content, (err) => {
         if (err) {
             console.error(err);
         }
