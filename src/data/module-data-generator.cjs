@@ -19,7 +19,8 @@ fs.readFile('./src/cars.txt', 'utf8', (err, data) => {
             name: "${car}",
             regNumber: "XYZ${Math.floor(1000 + Math.random() * 9000)}",
             year: ${Math.floor(Math.random() * 20 + 2000)},
-            color: "${['red', 'blue', 'green', 'black'][Math.floor(Math.random() * 4)]}"
+            color: "${['red', 'blue', 'green', 'black'][Math.floor(Math.random() * 4)]}",
+            rating: ${Math.floor(Math.random() * 11)}
         },`; 
     }
     content += "];";
