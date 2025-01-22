@@ -5,13 +5,18 @@ import { data } from '../data/module-data';
 import RatingBar from './RatingBar';
 import AppReducer from '../data/AppReducer';
 import FlexContainer from './FlexContainer';
+import { useContext } from 'react';
+import AppContext from '../data/AppContext';
 //import { useReducer } from 'react';
-const CarProfile = ({ data, dispatch}) => {
+const CarProfile = ({ data}) => {
     // const [rating, setRating] = useState(data.rating);
     // const handleRate = () => {
     //     setRating((prevRating) => (prevRating === 10 ? 0 : prevRating + 1));
     //   };
+    const context = useContext(AppContext);
+  const dispatch = context.dispatch;
     const handleRate = () => {
+        console.log('Rate button clicked');
         dispatch({
             type: 'rate',
             id: data.id,
@@ -19,6 +24,7 @@ const CarProfile = ({ data, dispatch}) => {
         });
     };
       const handleEdit = () => {
+        console.log('Edit button clicked');
         dispatch({
             type: 'edit',
             id: data.id,
@@ -27,6 +33,7 @@ const CarProfile = ({ data, dispatch}) => {
     };
 
     const handleDelete = () => {
+        console.log('Delete button clicked');
         dispatch({
             type: 'delete',
             id: data.id
