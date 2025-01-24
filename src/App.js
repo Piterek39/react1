@@ -12,6 +12,9 @@ import Lab2 from './pages/Lab2';
 import NotFound from './pages/NotFound';
 import Lab3 from './pages/Lab3';
 import Lab4 from './pages/Lab4';
+import Lab5 from './pages/Lab5';
+import PostComments from './data/PostComments';
+import UserDetails from './data/UserDetails';
 import AddForm from './pages/AddForm';
 import EditForm from './pages/EditForm';
 import AppReducer from '../src/data/AppReducer';
@@ -22,7 +25,8 @@ const menuItems = [
     { id: 2, label: "Laboratorium 1", url: "/lab1", urlPattern: "/lab1", element: <Lab1 /> },
   { id: 3, label: "Laboratorium 2", url: "/lab2/1", urlPattern: "/lab2/:id", element: <Lab2 /> },
   { id: 4, label: "Laboratorium 3", url: "/lab3", urlPattern: "/lab3", element: <Lab3 /> },
-  { id: 5, label: "Laboratorium 4", url: "/lab4", urlPattern: "/lab4", element: <Lab4 /> }
+  { id: 5, label: "Laboratorium 4", url: "/lab4", urlPattern: "/lab4", element: <Lab4 /> },
+  { id: 6, label: "Laboratorium 5", url: "/lab5", urlPattern: "/lab5", element: <Lab5 /> }
 ];
 // function App() {
 //     return (
@@ -46,6 +50,9 @@ function App() {
                  <Route path="/lab2" element={<Lab2 />} />
                  <Route path="/lab4/add" element={<AddForm />} />
                  <Route path="/lab4/edit/:id" element={<EditForm />} />
+                 <Route path="/lab5" element={<Lab5 />} />
+                 <Route path="/lab5/users/:id" element={<UserDetails />} />
+                <Route path="/lab5/posts/:id/comments" element={<PostComments />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </RootLayout>
